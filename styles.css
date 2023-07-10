@@ -1,0 +1,88 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:white;
+  background: #1F2737;
+}
+.container{
+  width: 380px;
+  margin: 10px auto;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0 50px;
+  background: #1F3953;
+}
+h1{
+  color: #FFF;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 40px;
+}
+.sub-text{
+  color:#D5D4D8;
+  font-size: 20px;
+  font-style: normal;
+  font-weight:400;
+  line-height: 28px;
+}
+span{
+  color: #4ADF86;
+}
+.slider{
+  margin-top: 35px;
+}
+label{
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+}
+.input-value{
+  display: inline-block;
+  font-size: 16px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: #FFF;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  border-radius: 15px;
+  border: 0px solid #000000;
+}
+.gen-rst-btn{
+  margin: 25px 0;
+  padding: 9px 17px 9px 15px;
+  border-radius: 6px;
+  background:#4ADF86;
+  color: #FFF;
+  border: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+}
+.passwords-div{
+  display:flex;
+  justify-content: center;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 42px;
+  border-top: 1px solid  #1F2737;
+}
+.pass-field{
+  font-size: 14px;
+  border-radius: 6px;
+  background: #1F2737;
+  width: 300px;
+  color:#FFF;
+  text-align: center;
+  padding: 20px 5px;
+}
+.pass-gen-text{
+  text-align: end;
+  font-size: 10px;
+  font-style: italic;
+  margin-right: -40px;
+}

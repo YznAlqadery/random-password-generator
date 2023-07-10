@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generate a <span>random password</span></h1>
+      <p class="sub-text">
+        Generate strong, random passwords effortlessly & never use an insecure
+        password again.
+      </p>
+
+      <div class="slider">
+        <label for="passlength">Select password length</label>
+        <input
+          type="range"
+          name="passlength"
+          id="pass-length"
+          min="8"
+          max="28"
+          oninput="rangeValue.innerText = this.value"
+        />
+        <p class="input-value" id="rangeValue">19</p>
+      </div>
+      <div class="gen-div">
+        <button class="gen-rst-btn" onclick="genRandomPassword()">
+          Generate passwords
+        </button>
+        <button class="gen-rst-btn" onclick="reset()">Reset</button>
+      </div>
+      <div class="passwords-div">
+        <p class="pass-field" id="password"></p>
+        <p class="pass-field" id="password2"></p>
+      </div>
+      <div class="footer">
+        <p class="pass-gen-text">Password Generator</p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
