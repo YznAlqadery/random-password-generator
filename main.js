@@ -1,6 +1,30 @@
-let password1 = document.getElementById("password");
-let password2 = document.getElementById("password2");
+let firstPassword = document.getElementById("password");
+let secondPassword = document.getElementById("password2");
+let numberCb = document.getElementById("numbers");
+let characterCb = document.getElementById("characters");
 const characters = [
+  "~",
+  "`",
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "_",
+  "-",
+  ",",
+  ";",
+  "<",
+  ">",
+  ".",
+  "?",
+  "/",
+];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const alphabets = [
   "A",
   "B",
   "C",
@@ -53,52 +77,38 @@ const characters = [
   "x",
   "y",
   "z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "~",
-  "`",
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "_",
-  "-",
-  ",",
-  ";",
-  "<",
-  ">",
-  ".",
-  "?",
-  "/",
 ];
-function randomNumbers() {
-  return Math.floor(Math.random() * characters.length);
+function randomNumbers(passwordArray) {
+  return Math.floor(Math.random() * passwordArray.length);
 }
-function genRandomPassword() {
-  let val = document.getElementById("pass-length").value;
-  let firstRandomNum = 0;
-  let SecondRandomNum = 0;
-  reset();
-  for (let i = 0; i < val; i++) {
-    firstRandomNum = randomNumbers();
-    SecondRandomNum = randomNumbers();
-    password1.textContent += characters[firstRandomNum];
-    password2.textContent += characters[SecondRandomNum];
+function getFinalPassword(passwordArray) {
+  let rngVal = document.getElementById("pass-length").value;
+  let rndmNumber = 0;
+  let finalPassword = "";
+  resetPassword();
+  for (let i = 0; i < rngVal; i++) {
+    rndmNumber = randomNumbers(passwordArray);
+    finalPassword += passwordArray[rndmNumber];
   }
+  return finalPassword;
 }
-function reset() {
-  password1.textContent = "";
-  password2.textContent = "";
+function resetPassword() {
+  firstPassword.textContent = "";
+  secondPassword.textContent = "";
+}
+function generatePassword() {
+  let passwordArray = alphabets;
+  let numbersChecked = numberCb.checked;
+  let characterChecked = characterCb.checked;
+  if (numbersChecked) {
+    passwordArray = passwordArray.concat(numbers);
+  }
+  if (characterChecked) {
+    passwordArray = passwordArray.concat(characters);
+  }
+
+  let firstPass = getFinalPassword(passwordArray);
+  let scndPass = getFinalPassword(passwordArray);
+  firstPassword.textContent = firstPass;
+  secondPassword.textContent = scndPass;
 }

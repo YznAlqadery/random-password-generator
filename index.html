@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Generate a <span>random password</span></h1>
+      <h1>Yzn's <span> random password generator.</span></h1>
       <p class="sub-text">
         Generate strong, random passwords effortlessly & never use an insecure
         password again.
@@ -26,11 +26,17 @@
         />
         <p class="input-value" id="rangeValue">19</p>
       </div>
+      <div class="checkboxes">
+        <label class="character-cb" for="character">Characters</label>
+        <input type="checkbox" id="characters" />
+        <label class="number-cb" for="numbers">Numbers</label>
+        <input type="checkbox" id="numbers" />
+      </div>
       <div class="gen-div">
-        <button class="gen-rst-btn" onclick="genRandomPassword()">
+        <button class="gen-rst-btn" onclick="generatePassword()">
           Generate passwords
         </button>
-        <button class="gen-rst-btn" onclick="reset()">Reset</button>
+        <button class="gen-rst-btn" onclick="resetPassword()">Reset</button>
       </div>
       <div class="passwords-div">
         <p class="pass-field" id="password"></p>
